@@ -4,6 +4,12 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: 'DNFForgedBlade-Medium';
+  src: url('../public/font/DNFForgedBlade-Medium.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
 
 body, html {
   margin: 0;
@@ -17,4 +23,9 @@ body {
   background-color: #fff; /* 배경 색상 설정 */
 }::-webkit-scrollbar {
   display: none;
+}
+
+.RootPageBody{
+  width: 100vw;
+  
 }
