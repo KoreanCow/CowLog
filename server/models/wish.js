@@ -1,27 +1,27 @@
 import mongoose from "mongoose";
 import moment from "moment";
 
-const PostSchema = new mongoose.Schema({
+const WishSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
-    index: true
+    index: true,
   },
   contents: {
     type: String,
     required: true,
   },
-  fileUrl: {
-    type: [String],
+  filUrl: {
+    type: String,
     default: null,
   },
   date: {
     type: String,
     default: moment().format('YYYY-MM-DD hh:mm:ss')
   },
-  category: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "category",
+  completed: {
+    type: Boolean,
+    default: false,
   },
   creator: {
     type: mongoose.Schema.Types.ObjectId,
@@ -29,6 +29,6 @@ const PostSchema = new mongoose.Schema({
   },
 })
 
-const Post = mongoose.model("post", PostSchema);
+const Wish = mongoose.model('wish', WishSchema);
 
-export default Post;
+export default Wish;

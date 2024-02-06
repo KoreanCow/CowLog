@@ -10,15 +10,16 @@ import cookieParser from 'cookie-parser';
 const app = express();
 const { MONGO_URI } = config
 
+import rootRoutes from './routes/api/index'
 import postRoutes from './routes/api/post'
 import userRoutes from './routes/api/user'
 import authRoutes from './routes/api/auth'
-import rootRoutes from './routes/api/index'
+import wishRoutes from './routes/api/wish'
 
 app.use(hpp());
 app.use(helmet());
 app.use(cookieParser());
-app.use(cors({ origin: true, credentials: true }));
+app.use(cors());
 app.use(morgan('dev'));
 
 app.use(express.json());
@@ -34,5 +35,5 @@ app.use('/', rootRoutes);
 app.use('/api/post', postRoutes)
 app.use('/api/user', userRoutes);
 app.use('/api/auth', authRoutes);
-
+app.use('/api/wish', wishRoutes);
 export default app;
