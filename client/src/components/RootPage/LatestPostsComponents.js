@@ -22,7 +22,7 @@ const dummy = [{
   'src': 'img/Sub3.jpeg'
 }]
 
-const LatestPostsComponents = () => {
+const LatestPostsComponents = ({ recentPost }) => {
 
   return (
     <div className='RootPageBody-LatestPosts'>
@@ -31,16 +31,15 @@ const LatestPostsComponents = () => {
         <div className='LatestPosts-Posts'>
           {/* 맵 메소드 사용부분  */}
           {
-            dummy.map((data) => (
-              <div className='Post' key={data.id}>
-                <img src={data.src} alt='Post Img' />
-                <span className='PostDate'>{data.date}</span>
-                <span className='PostTitle'>{data.title}</span>
-                <span className='PostSummary'>{data.summary}</span>
+            recentPost.slice().reverse().map((post, index) => (
+              <div className='Post' key={index}>
+                <img src={post.fileUrl.length === 0 ? 'img/Sub1.jpeg' : post.file} alt='postImg' />
+                <span className='PostDate'>{post.date}</span>
+                <span className='PostTitle'>{post.title}</span>
+                <span className='PostSummary'>{post.contents}</span>
               </div>
             ))
           }
-
         </div>
         <button className='ReadMoreBtn'>Read More</button>
       </div>
