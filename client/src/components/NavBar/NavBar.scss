@@ -1,0 +1,47 @@
+.NavigationBar{
+  width: 100vw;
+  height: 70px;
+  background: #F4F1E9;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+  
+  -webkit-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+  -moz-box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+  box-shadow: 0px 0px 30px 0px rgba(0,0,0,0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+
+  p{
+    width: 70%;
+    font-size: 40px;
+    margin-left: 60px;
+  }
+}
+
+.NavigationBar-Actions{
+  width: 25%;
+  margin-right: 30px;
+  font-size: 13px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  a:visited {
+   color: inherit; /* 방문한 링크의 색상을 상속하여 유지 */
+   text-decoration: none; /* 방문한 링크의 기본 텍스트 장식 제거 */
+  }
+}
+.NavigationBar-Link{
+  width: 5%;
+  margin-right: 30px;
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  img{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+  }
+  
+}

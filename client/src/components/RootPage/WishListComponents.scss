@@ -1,0 +1,89 @@
+
+.RootPageBody-WishList{
+  width: 100%;
+  height: 600px;
+  background: #F4F1E9;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  p{
+    width: 100%;
+    text-align: center;
+    font-size: 35px;
+  }
+  .WishList-Container{
+    width: 100%;
+    height: 60%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-wrap: nowrap;
+    .WishList{
+      width: 200px;
+      height: 280px;
+      cursor: pointer;
+      img{
+        width: 100%;
+        height: 250px;
+      }
+      p{
+        font-size: 20px;
+      }
+      overflow: visible;
+      
+      -webkit-transform: translateZ(0);
+      transform: translateZ(0);
+      box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+      -webkit-backface-visibility: hidden;
+      backface-visibility: hidden;
+      -webkit-transition: color .4s;
+      transition: color .4s;
+            
+      :hover{
+        -webkit-animation-name: eff24-move;
+        animation-name: eff24-move;
+        -webkit-animation-duration: .4s;
+        animation-duration: .4s;
+        -webkit-animation-timing-function: linear;
+        animation-timing-function: linear;
+        -webkit-animation-iteration-count: 1;
+        animation-iteration-count: 1
+      }
+    }
+  }
+  .ViewMoreBtn{
+    width: 200px;
+    height: 40px;
+    font-family: 'DNFBitBitv2', Arial, sans-serif;
+    font-size: 13px;
+    background: transparent;
+    border: 0.8px solid black; 
+    cursor: pointer;
+    margin-top: 20px;
+    transition: all 0.2s;
+  }
+  .ViewMoreBtn:hover{
+    color: rgb(138, 138, 138);
+    border: 0.8px solid rgb(135, 135, 135);
+  }
+}
+
+
+@keyframes eff24-move {
+  30% {
+    -webkit-transform: translate3d(0, -2px, 0) rotate(2deg);
+    transform: translate3d(0, -2px, 0) rotate(2deg)
+  }
+  50% {
+    -webkit-transform: translate3d(0, -1.5px, 0) rotate(-2deg);
+    transform: translate3d(0, -1.5px, 0) rotate(-2deg)
+  }
+  80% {
+    -webkit-transform: translate3d(0, 0, 0) rotate(-1.5deg);
+    transform: translate3d(0, 0, 0) rotate(-1.5deg)
+  }
+  100% {
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg)
+  }
+}

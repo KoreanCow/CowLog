@@ -1,0 +1,20 @@
+@font-face {
+  font-family: 'DNFBitBitv2';
+  src: url('../public/font/DNFBitBitv2.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body {
+  font-family: 'DNFBitBitv2', Arial, sans-serif;
+  background-color: #fff; /* 배경 색상 설정 */
+}::-webkit-scrollbar {
+  display: none;
+}
