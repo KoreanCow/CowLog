@@ -34,7 +34,7 @@ router.post("/", (req, res) => {
       name,
       email,
       password,
-      role,
+      role: role === 'koreancow' ? 'admin' : 'common'
     });
 
     bcrypt.genSalt(10, (err, salt) => {
