@@ -5,11 +5,13 @@ import MainImgComponents from '../components/RootPage/MainImgComponents'
 import LatestPostsComponents from '../components/RootPage/LatestPostsComponents'
 import WishListComponents from '../components/RootPage/WishListComponents';
 import LanguageComponents from '../components/RootPage/LanguageComponents';
-import LoadingPage from './LoadingPage';
+import LoadingComponents from '../components/Loading/LoadingComponents';
+
 const RootPage = () => {
+
   const [posts, setPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(false);
-
+  // 리액트 서스펜스 사용해보기 로딩
   useEffect(() => {
     const getDatas = async () => {
       try {
@@ -21,7 +23,7 @@ const RootPage = () => {
         }, 1500);
       } catch (err) {
         console.error('서버 연결을 실패했습니다. error data :', err);
-        setTimeout(getDatas, 4000);
+        setTimeout(getDatas, 1000);
       }
     }
 
@@ -29,14 +31,15 @@ const RootPage = () => {
   }, [])
 
   return (
-    isLoading === false ? <LoadingPage isLoading={isLoading} setIsLoading={setIsLoading} /> : (
+    isLoading === false ? <LoadingComponents isLoading={isLoading} setIsLoading={setIsLoading} /> : (
       <div className='RootPageBody'>
         <MainImgComponents />
         <LatestPostsComponents recentPost={posts.recentPosts} />
         <WishListComponents recentWish={posts.recentWishs} />
         <LanguageComponents />
       </div>
-    ))
+    )
+  )
 }
 
 export default RootPage
