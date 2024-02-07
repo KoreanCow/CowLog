@@ -1,27 +1,5 @@
 import React from 'react'
 import './LatestsPostsComponents.scss'
-const dummy = [{
-  'id': 1,
-  'date': '2023.08.27',
-  'title': 'dummy data 1',
-  'summary': 'dummy data summary 1',
-  'src': 'img/Sub1.jpeg'
-},
-{
-  'id': 2,
-  'date': '2023.08.25',
-  'title': 'dummy data 2',
-  'summary': 'dummy data summary 2',
-  'src': 'img/Sub2.jpeg'
-},
-{
-  'id': 3,
-  'date': '2023.08.29',
-  'title': 'dummy data 3',
-  'summary': 'dummy data summary 3',
-  'src': 'img/Sub3.jpeg'
-}]
-
 const LatestPostsComponents = ({ recentPost }) => {
 
   return (

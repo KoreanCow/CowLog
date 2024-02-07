@@ -1,0 +1,56 @@
+.AuthPage-SignUp-Body{
+  width: 100%;
+  height: 80vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.AuthPage-SignUp-Container{
+  width: 60%;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: flex-start;
+ 
+  p{
+    font-size: 40px;
+    height: 10%;
+  }
+  .SignUpForm{
+      width: 90%;
+      height: 90%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      input {
+        height: 60px;
+        border-radius: 10px;
+        border: none;
+        background: #F4F1E9;
+        outline: none;
+        font-size: 15px;
+        font-family: 'DNFBitBitv2', Arial, sans-serif;
+      }::placeholder{
+        margin-left: 20px;
+      }
+      button {
+        height: 60px;
+        border-radius: 10px;
+        border: none;
+        background: #E0A8A8;
+        cursor: pointer;
+        font-size: 20px;
+        font-family: 'DNFBitBitv2', Arial, sans-serif;
+        transition: all 0.1s ease-in;
+        &:hover{
+          background: #EF8484;
+        }
+      }
+  } 
+  a:visited {
+    color: inherit; 
+    text-decoration: none; 
+   }
+}
