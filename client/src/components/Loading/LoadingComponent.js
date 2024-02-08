@@ -1,5 +1,5 @@
 import React from 'react'
-import './LoadingComponents.scss'
+import './LoadingComponent.scss'
 import Box from '@mui/material/Box';
 import { styled } from '@mui/material/styles';
 import LinearProgress, { linearProgressClasses } from '@mui/material/LinearProgress';
@@ -15,7 +15,7 @@ const CustomLinearProgress = styled(LinearProgress)(({ theme }) => ({
   },
 }))
 
-const LoadingComponents = () => {
+const LoadingComponent = () => {
   return (
     <div className='LoadingComponent'>
       <Box sx={{ width: '50%' }}>
@@ -26,4 +26,4 @@ const LoadingComponents = () => {
   )
 }
 
-export default LoadingComponents;
+export default LoadingComponent;
