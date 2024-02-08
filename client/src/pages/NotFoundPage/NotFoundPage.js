@@ -1,6 +1,6 @@
 import React from 'react'
 
-const NotFoundPage = () => {
+const index = () => {
   return (
     <div>
       없는 페이지에용
@@ -8,4 +8,4 @@ const NotFoundPage = () => {
   )
 }
 
-export default NotFoundPage
+export default index;

@@ -1,6 +1,7 @@
 import React from 'react'
-import './LatestsPostsComponents.scss'
-const LatestPostsComponents = ({ recentPost }) => {
+import './LatestPostComponent.scss'
+import { Link } from 'react-router-dom'
+const LatestPostsComponent = ({ recentPost }) => {
 
   return (
     <div className='RootPageBody-LatestPosts'>
@@ -19,10 +20,14 @@ const LatestPostsComponents = ({ recentPost }) => {
             ))
           }
         </div>
-        <button className='ReadMoreBtn'>Read More</button>
+        <button className='ReadMoreBtn'>
+          <Link to='/posts'>
+            Read More
+          </Link>
+        </button>
       </div>
     </div>
   )
 }
 
-export default LatestPostsComponents
+export default LatestPostsComponent;

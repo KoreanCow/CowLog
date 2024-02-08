@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { logout } from '../redux/actions/authActions'
+import { logout } from '../../redux/actions/authActions'
 import { useCookies } from 'react-cookie'
 
 const MyPage = () => {

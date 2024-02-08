@@ -1,6 +1,6 @@
 import React from 'react'
-import './MainImgComponents.scss'
-const MainImgComponents = () => {
+import './MainImgComponent.scss'
+const MainImgComponent = () => {
   return (
     <div className='RootPageBody-MainImg'>
       <img src='img/Main1.jpeg' alt='MainImg1' />
@@ -9,4 +9,4 @@ const MainImgComponents = () => {
   )
 }
 
-export default MainImgComponents
+export default MainImgComponent;

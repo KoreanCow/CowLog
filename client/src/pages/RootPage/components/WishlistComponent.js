@@ -1,6 +1,6 @@
 import React from 'react'
-import './WishListComponents.scss'
-const WishListComponents = ({ recentWish }) => {
+import './WishlistComponent.scss'
+const WishListComponent = ({ recentWish }) => {
   return (
     <div className='RootPageBody-WishList'>
       <p>My Wish List</p>
@@ -19,4 +19,4 @@ const WishListComponents = ({ recentWish }) => {
   )
 }
 
-export default WishListComponents
+export default WishListComponent;

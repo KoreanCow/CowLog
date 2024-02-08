@@ -1,4 +1,7 @@
-
+a:visited {
+  color: inherit; /* 방문한 링크의 색상을 상속하여 유지 */
+   text-decoration: none; /* 방문한 링크의 기본 텍스트 장식 제거 */
+}
 .RootPageBody-LatestPosts{
   width: 100vw;
   height: 540px;
