@@ -11,7 +11,7 @@ const WishSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  filUrl: {
+  fileUrl: {
     type: String,
     default: null,
   },
