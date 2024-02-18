@@ -1,6 +1,6 @@
 import React from 'react'
 
-import useDataFetching from './hooks/useDataFetching';
+import useDataFetching from '../../hooks/useDataFetching';
 
 import MainImgComponent from './components/MainImgComponent'
 import LatestPostComponent from './components/LatestPostComponent'

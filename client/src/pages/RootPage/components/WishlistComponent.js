@@ -1,5 +1,6 @@
 import React from 'react'
 import './WishlistComponent.scss'
+import { Link } from 'react-router-dom';
 const WishListComponent = ({ recentWish }) => {
   return (
     <div className='RootPageBody-WishList'>
@@ -14,7 +15,9 @@ const WishListComponent = ({ recentWish }) => {
           ))
         }
       </div>
-      <button className='ViewMoreBtn'>View More</button>
+      <Link to='/posts'>
+        <button className='ViewMoreBtn'>View More</button>
+      </Link>
     </div>
   )
 }
