@@ -14,7 +14,7 @@ const NavBar = () => {
   }
   return (
     <div className='NavigationBar'>
-      <p>COWLOG</p>
+      <p>COWLOG Mk.1</p>
       <div className='NavigationBar-Actions'>
         <Link to='/'>Home</Link>
         <Link to='/posts'>Blog</Link>
