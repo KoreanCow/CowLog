@@ -1,13 +1,14 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import { useCookies } from 'react-cookie';
-
 import { useDispatch } from 'react-redux';
+import axios from 'axios';
+import Swal from 'sweetalert2';
+
 import { loginSuccess } from '../../../redux/actions/authActions';
 
 import './AuthComponent.scss'
 
-import axios from 'axios';
 const AuthComponent = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -24,9 +25,12 @@ const AuthComponent = () => {
       setCookie('token', token, { path: '/', maxAge: 36000 })
       dispatch(loginSuccess(token));
       navigate('/')
-      // console.log(response);
     } catch (err) {
-      alert('정보가 틀립니다');
+      Swal.fire({
+        icon: 'error',
+        title: '앗..',
+        text: '정보가 틀렸습니다.',
+      })
       console.error(err);
     }
   }
