@@ -8,7 +8,7 @@ import auth from '../../middleware/auth';
 
 const router = express.Router();
 
-// api/post
+// api/posting
 router.get('/', auth, async (req, res) => {
   try {
     const user = await User.findById(req.user.id);
@@ -44,6 +44,18 @@ router.post('/', auth, async (req, res, next) => {
     res.json(newPost);
   } catch (e) {
     console.log(e);
+  }
+})
+
+router.delete('/delete', async (req, res) => {
+  const postId = req.params.postId;
+
+  try {
+    await Post.deleteOne({ _id: postId })
+
+    res.json({ message: '데이터 삭제 성공' })
+  } catch (e) {
+    res.status(500).json({ message: '데이터 삭제 오류', e })
   }
 })
 
