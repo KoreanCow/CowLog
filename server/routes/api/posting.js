@@ -3,6 +3,7 @@ import moment from 'moment';
 // Model
 import Post from '../../models/post'
 import User from '../../models/user'
+import Wish from '../../models/wish';
 
 import auth from '../../middleware/auth';
 
@@ -46,17 +47,39 @@ router.post('/', auth, async (req, res, next) => {
     console.log(e);
   }
 })
-
-router.delete('/delete', async (req, res) => {
-  const postId = req.params.postId;
-
+router.delete('/delete/:postId', auth, async (req, res) => {
   try {
-    await Post.deleteOne({ _id: postId })
+    const postId = req.params.postId;
+    const user = await User.findById(req.user.id);
 
-    res.json({ message: '데이터 삭제 성공' })
+    const post = await Post.findById(postId);
+    const wish = await Wish.findById(postId);
+    if (!post && !wish) {
+      return res.status(404).json({ error: '게시글 또는 위시리스트를 찾을 수 없습니다.' });
+    }
+    if (post) {
+      if (String(post.creator) !== String(user._id)) {
+        return res.status(401).json({ error: '게시글 삭제 권한이 없습니다.' });
+      } else {
+        await Post.deleteOne({ _id: postId })
+        user.posts.pull(postId);
+        await user.save();
+        return res.json({ message: '게시글이 성공적을 삭제되었습니다.' });
+      }
+    } else if (wish) {
+      if (String(wish.creator) !== String(user._id)) {
+        return res.status(401).json({ error: '게시글 삭제 권한이 없습니다.' });
+      } else {
+        await Wish.deleteOne({ _id: postId });
+        user.wishs.pull(postId);
+        await user.save();
+        return res.json({ message: '위시리스트가 성공적으로 삭제되었습니다.' });
+      }
+    }
   } catch (e) {
-    res.status(500).json({ message: '데이터 삭제 오류', e })
+    return res.status(500).json({ error: '데이터 삭제 오류' });
   }
-})
+}
+);
 
 export default router;

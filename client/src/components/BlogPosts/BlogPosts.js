@@ -39,7 +39,7 @@ const BlogPosts = ({ posts, type }) => {
       <>
         {posts.map((wish, index) => (
           <div className='BlogPost' id={wish._id} key={index} onClick={() => handleClickPost(wish._id)}>
-            <img src={wish.fileUrl.length === 0 ? 'img/Sub1.jpeg' : wish.fileUrl} alt='postImg' />
+            <img src={wish.fileUrl === null ? 'img/Sub1.jpeg' : wish.fileUrl} alt='postImg' />
             <span className='BlogPostDate'>{wish.date}</span>
             <span className='BlogPostTitle'>{wish.title}</span>
             <span className='BlogPostSummary'>{wish.contents}</span>
