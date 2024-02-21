@@ -14,7 +14,7 @@ const BlogComponent = ({ posts, isLoggedIn, goToLogin }) => {
       </div>
       <hr />
       <div className='BlogPosts'>
-        <BlogPosts posts={postFindResult} isLatest={false} />
+        <BlogPosts posts={postFindResult} type={'blog'} />
       </div>
       {
         isLoggedIn ? <BlogPostingButton text={'게시글 작성하러 가기'} /> :

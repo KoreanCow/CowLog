@@ -1,7 +1,9 @@
 import React from 'react'
 import BlogPostingButton from '../../../components/BlogPosts/BlogPostingButton'
+import BlogPosts from '../../../components/BlogPosts/BlogPosts'
 const WishComponent = ({ wishs, isLoggedIn, goToLogin }) => {
 
+  const wishFindResult = wishs?.wishFindResult || [];
   return (
     <div className='BlogPostContainer'>
       <div className='BlogPostTitle'>
@@ -9,13 +11,7 @@ const WishComponent = ({ wishs, isLoggedIn, goToLogin }) => {
       </div>
       <hr />
       <div className='BlogPosts'>
-        {wishs.wishFindResult.map((wish, index) => (
-          <div className='BlogPost' key={index}>
-            <img src={wish.fileUrl === null ? 'img/Sub2.jpeg' : wish.file} alt='postImg' />
-            <span className='BlogPostTitle'>{wish.title}</span>
-            <span className='BlogPostSummary'>{wish.contents}</span>
-          </div>
-        ))}
+        <BlogPosts posts={wishFindResult} type={'wish'} />
       </div>
       {
         isLoggedIn ? <BlogPostingButton text={'위시 리스트 작성하러 가기'} /> :
