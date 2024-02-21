@@ -9,7 +9,7 @@ const LatestPostsComponent = ({ recentPost }) => {
       <div className='LatestPosts-Container'>
         <p>My Latest Posts</p>
         <div className='LatestPosts-Posts'>
-          <BlogPosts posts={recentPost} />
+          <BlogPosts posts={recentPost} type={'latest'} />
         </div>
         <Link to='/posts'>
           <button className='ReadMoreBtn'>

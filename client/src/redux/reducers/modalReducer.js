@@ -1,7 +1,8 @@
 import { OPEN_MODAL, CLOSE_MODAL } from '../actions/modalActions';
 
 const initialState = {
-  isOpend: false,
+  isOpened: false,
+  postId: null,
 }
 
 const modalReducer = (state = initialState, action) => {
@@ -9,12 +10,14 @@ const modalReducer = (state = initialState, action) => {
     case OPEN_MODAL:
       return {
         ...state,
-        isOpend: true,
+        isOpened: true,
+        postId: action.payload
       };
     case CLOSE_MODAL:
       return {
         ...state,
-        isOpend: false,
+        isOpened: false,
+        postId: null,
       }
     default:
       return state;
